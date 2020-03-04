@@ -1,0 +1,5 @@
+name: 'Setup CLI'
+description: 'Setup AIO CLI'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
