@@ -10,16 +10,28 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 const core = require('@actions/core')
-const execSync = require('child_process').execSync
+const exec = require('@actions/exec')
 
 try {
-  let options = {
-      stdio: 'inherit',
-      env: process.env
-  }
-   execSync('sudo npm install -g @adobe/aio-cli', options)
-   execSync('sudo aio -v', options)
+  const os = core.getInput('os')
+  console.log(" OS - " + os)
+   runCommand(os)
+   .then(() => {
+     console.log("action completed")
+   })
+   .catch(e => {
+     core.setFailed(e.message);
+   })
 
 } catch (error) {
   core.setFailed(error.message);
+}
+
+async function runCommand(os) {
+  let commandStr = 'npm install -g @adobe/aio-cli'
+  if(os && os.startsWith("ubuntu"))
+    commandStr = 'sudo ' + commandStr
+
+  await exec.exec(commandStr)
+  await exec.exec('aio -v')
 }
