@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup CLI
         uses: adobe/aio-cli-setup-action@0.0.1
+        with:
+          os: ubuntu-latest
  ```
  Once setup you can use adobe/aio-app github action to perform app build ,test and deployment. Alternatively you can directly execuite AIO CLI commands in run block of your workflow files.
 
