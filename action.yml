@@ -1,4 +1,4 @@
-name: 'Setup CLI'
+name: 'AIO Setup CLI'
 description: 'Setup AIO CLI'
 runs:
   using: 'node12'
