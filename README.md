@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # aio-cli-setup-action
-[AIO CLI](https://github.com/adobe/aio-cli) support for GitHub actions. This action supports installing AIO CLI to various enviornments.
+[AIO CLI](https://github.com/adobe/aio-cli) support for GitHub actions. This action supports installing AIO CLI to various environments.
 
 # Getting Started
 You can include the action in your workflow as adobe/aio-cli-setup-action@0.0.1 Example :
