@@ -1,6 +1,6 @@
 {
   "name": "aio-cli-setup-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "GitHub Action to setup AIO CLI",
   "scripts": {
     "lint": "eslint index.js",
