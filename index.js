@@ -27,8 +27,10 @@ try {
   core.setFailed(error.message);
 }
 
-async function runCommand(os) {
+async function runCommand(os, version) {
   let commandStr = 'npm install -g @adobe/aio-cli'
+  if(version)
+    commandStr = commandStr + '@' + version
   if(os && os.startsWith("ubuntu"))
     commandStr = 'sudo ' + commandStr
 
