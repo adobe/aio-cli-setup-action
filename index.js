@@ -14,8 +14,10 @@ const exec = require('@actions/exec')
 
 try {
   const os = core.getInput('os')
+  const version = core.getInput('version')
   console.log(" OS - " + os)
-   runCommand(os)
+  console.log(" Version - " + version)
+   runCommand(os, version)
    .then(() => {
      console.log("action completed")
    })

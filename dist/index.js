@@ -1118,8 +1118,10 @@ const exec = __webpack_require__(986)
 
 try {
   const os = core.getInput('os')
+  const version = core.getInput('version')
   console.log(" OS - " + os)
-   runCommand(os)
+  console.log(" Version - " + version)
+   runCommand(os, version)
    .then(() => {
      console.log("action completed")
    })
