@@ -20,6 +20,7 @@ jobs:
         uses: adobe/aio-cli-setup-action@1.0.0
         with:
           os: ubuntu-latest
+          version: 7.0.0
  ```
 Once they are set up you can use adobe/aio-apps-action github action to perform app build, test and deployment. Alternatively, you can directly execute AIO CLI commands in the run block of your workflow files.
 
