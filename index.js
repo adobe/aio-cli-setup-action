@@ -16,7 +16,6 @@ try {
   const os = core.getInput('os')
   const version = core.getInput('version')
   console.log(" OS - " + os)
-  console.log(" Version - " + version)
    runCommand(os, version)
    .then(() => {
      console.log("action completed")
@@ -31,8 +30,10 @@ try {
 
 async function runCommand(os, version) {
   let commandStr = 'npm install -g @adobe/aio-cli'
-  if(version)
+  if(version) {
+    console.log(" Version - " + version)
     commandStr = commandStr + '@' + version
+  }
   if(os && os.startsWith("ubuntu"))
     commandStr = 'sudo ' + commandStr
 
