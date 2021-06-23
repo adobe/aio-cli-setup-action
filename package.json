@@ -1,5 +1,5 @@
 {
-  "name": "aio-cli-setup-action",
+  "name": "@adobe/aio-cli-setup-action",
   "version": "1.1.0",
   "description": "GitHub Action to setup AIO CLI",
   "scripts": {
@@ -10,6 +10,7 @@
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4"
   },
+  "repository": "adobe/aio-cli-setup-action",
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
     "eslint": "^6.8.0"
