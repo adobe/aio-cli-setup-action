@@ -14,8 +14,9 @@ const exec = require('@actions/exec')
 
 try {
   const os = core.getInput('os')
+  const version = core.getInput('version')
   console.log(" OS - " + os)
-   runCommand(os)
+   runCommand(os, version)
    .then(() => {
      console.log("action completed")
    })
@@ -27,8 +28,12 @@ try {
   core.setFailed(error.message);
 }
 
-async function runCommand(os) {
+async function runCommand(os, version) {
   let commandStr = 'npm install -g @adobe/aio-cli'
+  if(version) {
+    console.log(" Version - " + version)
+    commandStr = commandStr + '@' + version
+  }
   if(os && os.startsWith("ubuntu"))
     commandStr = 'sudo ' + commandStr
 
