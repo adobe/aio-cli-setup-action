@@ -12,7 +12,7 @@
   },
   "repository": "adobe/aio-cli-setup-action",
   "devDependencies": {
-    "@zeit/ncc": "^0.20.5",
+    "@zeit/ncc": "^0.22.3",
     "eslint": "^6.8.0"
   }
 }
