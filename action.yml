@@ -1,5 +1,5 @@
 name: 'AIO CLI Setup'
 description: 'Setup AIO CLI for GitHub Actions'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
