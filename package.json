@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aio-cli-setup-action",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "GitHub Action to setup AIO CLI",
   "scripts": {
     "lint": "eslint index.js",
@@ -12,7 +12,7 @@
   },
   "repository": "adobe/aio-cli-setup-action",
   "devDependencies": {
-    "@zeit/ncc": "^0.22.3",
+    "@vercel/ncc": "^0.38.0",
     "eslint": "^8.41.0"
   }
 }
