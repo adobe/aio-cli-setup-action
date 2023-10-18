@@ -38,5 +38,5 @@ async function runCommand(os, version) {
     commandStr = 'sudo ' + commandStr
 
   await exec.exec(commandStr)
-  await exec.exec('aio -v')
+  await exec.exec('aio --version')
 }
