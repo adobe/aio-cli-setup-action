@@ -3,3 +3,10 @@ description: 'Setup AIO CLI for GitHub Actions'
 runs:
   using: 'node16'
   main: 'dist/index.js'
+inputs: 
+  os: 
+    description: 'Operating System'
+    required: true
+  version: 
+    description: 'AIO CLI Version'
+    required: true
