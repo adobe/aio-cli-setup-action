@@ -5,7 +5,7 @@
 [AIO CLI](https://github.com/adobe/aio-cli) support for GitHub actions. This action supports installing AIO CLI to various environments.
 
 # Getting Started
-You can include the action in your workflow as adobe/aio-cli-setup-action@1.1.0 Example :
+You can include the action in your workflow as adobe/aio-cli-setup-action@1.3.0 Example :
 
 
 ```
@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup CLI
-        uses: adobe/aio-cli-setup-action@1
+        uses: adobe/aio-cli-setup-action@1.3.0
         with:
           os: ubuntu-latest
-          version: 7.0.0
+          version: 10.0.0
  ```
 Once they are set up you can use adobe/aio-apps-action github action to perform app build, test and deployment. Alternatively, you can directly execute AIO CLI commands in the run block of your workflow files.
 

@@ -12,31 +12,33 @@ governing permissions and limitations under the License.
 const core = require('@actions/core')
 const exec = require('@actions/exec')
 
-try {
-  const os = core.getInput('os')
-  const version = core.getInput('version')
-  console.log(" OS - " + os)
-   runCommand(os, version)
-   .then(() => {
-     console.log("action completed")
-   })
-   .catch(e => {
-     core.setFailed(e.message);
-   })
-
-} catch (error) {
-  core.setFailed(error.message);
+const main = async () => {
+  try {
+    const os = core.getInput('os')
+    const version = core.getInput('version')
+    console.log(' OS - ' + os)
+    await runCommand(os, version)
+    console.log('action completed')
+  } catch (error) {
+    core.setFailed(error.message)
+  }
 }
 
-async function runCommand(os, version) {
+/**
+ * Install aio-cli
+ * @param {string} os OS name
+ * @param {string} version Version of aio-cli
+ */
+async function runCommand (os, version) {
   let commandStr = 'npm install -g @adobe/aio-cli'
-  if(version) {
-    console.log(" Version - " + version)
+  if (version) {
+    console.log(' Version - ' + version)
     commandStr = commandStr + '@' + version
   }
-  if(os && os.startsWith("ubuntu"))
-    commandStr = 'sudo ' + commandStr
+  if (os && os.startsWith('ubuntu')) { commandStr = 'sudo ' + commandStr }
 
   await exec.exec(commandStr)
   await exec.exec('aio --version')
 }
+
+module.exports = main() // Run the action
